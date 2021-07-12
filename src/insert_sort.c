@@ -6,7 +6,7 @@
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 06:22:57 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/08 12:07:12 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 12:03:37 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@ void	sort_two(t_stacks *st)
 
 void	sort_three(t_stacks *st)
 {
-	if	(st->a[0] < st->a[2] && st->a[2] < st->a[1])
+	if (st->a[0] < st->a[2] && st->a[2] < st->a[1])
 	{
 		swap_a(st, 1);
 		rotate_a(st, 1);
 	}
-	if	(st->a[1] < st->a[0] && st->a[0] < st->a[2])
+	if (st->a[1] < st->a[0] && st->a[0] < st->a[2])
 		swap_a(st, 1);
-	if	(st->a[2] < st->a[0] && st->a[0] < st->a[1])
+	if (st->a[2] < st->a[0] && st->a[0] < st->a[1])
 		rev_rotate_a(st, 1);
-	if	(st->a[1] < st->a[2] && st->a[2] < st->a[0])
+	if (st->a[1] < st->a[2] && st->a[2] < st->a[0])
 		rotate_a(st, 1);
-	if	(st->a[2] < st->a[1] && st->a[1] < st->a[0])
+	if (st->a[2] < st->a[1] && st->a[1] < st->a[0])
 	{
 		swap_a(st, 1);
 		rev_rotate_a(st, 1);

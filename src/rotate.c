@@ -6,7 +6,7 @@
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 16:26:21 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/08 12:03:08 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 12:05:22 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rotate_tab(int *tab, int len)
 {
-	int 	i;
+	int		i;
 	int		first;
 
 	i = 0;

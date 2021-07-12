@@ -6,7 +6,7 @@
 #    By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 03:30:06 by gdinet            #+#    #+#              #
-#    Updated: 2021/07/08 16:10:08 by gdinet           ###   ########.fr        #
+#    Updated: 2021/07/12 14:19:16 by gdinet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ INC			= -I./inc
 FT			= libft
 
 SRC			= src/clear.c \
-			  src/chunk_sort2.c \
+			  src/chunk_sort.c \
 			  src/print_game.c \
 			  src/insert_sort.c \
 			  src/main_push_swap.c \

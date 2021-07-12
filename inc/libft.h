@@ -6,7 +6,7 @@
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 11:34:55 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/03 06:40:17 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 11:25:37 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,21 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct		s_list
+struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
-}					t_list;
+};
 
-typedef struct		s_file
+struct		s_file
 {
 	int				fd;
 	char			*buf;
 	struct s_file	*next;
-}					t_file;
+};
+
+typedef struct s_list	t_list;
+typedef struct s_file	t_file;
 
 int					ft_atoi(const char *str);
 int					ft_atoi_ovf(const char *str, int *res);
@@ -72,8 +75,8 @@ size_t				ft_strlcpy(char *dst, const char *scr, size_t dstsize);
 size_t				ft_strlen(const char *s);
 char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-char				*ft_strnstr
-					(const char *haystack, const char *needle, size_t len);
+char				*ft_strnstr(const char *haystack, const char *needle,
+						size_t len);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(const char *s, unsigned int start, size_t len);

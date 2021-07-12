@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chunk_sort.c                                       :+:      :+:    :+:   */
+/*   chunk_sort2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:11:11 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/08 15:30:57 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 12:02:52 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,35 @@
 
 #include <stdio.h>
 
-int		move_top(t_stacks *st, int max)
+int	move_top(t_stacks *st, int max)
 {
 	int		i;
 	int		first;
 	int		last;
 
 	if (st->a_len == 0)
-		return (0);
+		return (-1);
 	if (st->a[0] <= max)
-		return (1);
+		return (0);
 	i = 1;
 	first = -1;
 	last = -1;
 	while (i < st->a_len && first == -1 && last == -1)
 	{
 		if (st->a[i] <= max)
-			first = st->a[i];
+			first = i;
 		if (st->a[st->a_len - i] <= max)
-			last = st->a[st->a_len - i];
+			last = st->a_len - i;
 		i++;
 	}
-	while (first != -1 && st->a[0] != first)
-		rotate_a(st, 1);
-	while (first == -1 && last != -1 && st->a[0] != last)
-		rev_rotate_a(st, 1);
-	return (first != -1 || last != -1);
+	if (first != -1)
+		return (first);
+	if (last != -1)
+		return (last);
+	return (-1);
 }
 
-int		pos_smaller(t_stacks *st, int to_push)
+int	pos_smaller(t_stacks *st, int to_push)
 {
 	int		max;
 	int		smaller;
@@ -70,6 +70,29 @@ int		pos_smaller(t_stacks *st, int to_push)
 	return (pos);
 }
 
+void	rotate_stacks(t_stacks *st, int pos_a, int pos_b)
+{
+	if (pos_a >= (st->a_len / 2 + 1))
+		pos_a = pos_a - st->a_len;
+	if (pos_b >= (st->b_len / 2 + 1))
+		pos_b = pos_b - st->b_len;
+	while (pos_a != 0 || pos_b != 0)
+	{
+		if (pos_a > 0 && pos_b > 0)
+			rotate_ab(st, pos_a-- && pos_b--);
+		else if (pos_a < 0 && pos_b < 0)
+			rev_rotate_ab(st, pos_a++ && pos_b++);
+		else if (pos_a > 0)
+			rotate_a(st, pos_a--);
+		else if (pos_a < 0)
+			rev_rotate_a(st, pos_a++);
+		else if (pos_b > 0)
+			rotate_b(st, pos_b--);
+		else if (pos_b < 0)
+			rev_rotate_b(st, pos_b++);
+	}
+}
+
 void	set_b(t_stacks *st, int to_push)
 {
 	int		pos;
@@ -92,15 +115,18 @@ void	set_b(t_stacks *st, int to_push)
 void	chunk_sort(t_stacks *st, int chunk)
 {
 	int		max_chunk;
+	int		pos_a;
 
 	value_to_pos(st->a, st->a_len);
 	max_chunk = (st->a_len + st->b_len) / chunk;
 	while (st->a_len)
 	{
-		while (move_top(st, max_chunk))
+		pos_a = move_top(st, max_chunk);
+		while (pos_a != -1)
 		{
-			set_b(st, st->a[0]);
+			rotate_stacks(st, pos_a, pos_smaller(st, st->a[pos_a]));
 			push_b(st, 1);
+			pos_a = move_top(st, max_chunk);
 		}
 		max_chunk += (st->a_len + st->b_len) / chunk;
 	}

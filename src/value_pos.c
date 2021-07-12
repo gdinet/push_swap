@@ -6,7 +6,7 @@
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 13:37:02 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/05 13:54:45 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 11:49:51 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	tab_cpy(int *src, int *dst, int len)
 	}
 }
 
-int		find_value(int *tab, int value, int len)
+int	find_value(int *tab, int value, int len)
 {
 	int		i;
 
@@ -38,12 +38,13 @@ int		find_value(int *tab, int value, int len)
 	return (-1);
 }
 
-int		value_to_pos(int *tab, int len)
+int	value_to_pos(int *tab, int len)
 {
 	int		*sort;
 	int		i;
 
-	if (!(sort = malloc(sizeof(int) * len)))
+	sort = malloc(sizeof(int) * len);
+	if (!sort)
 		return (-1);
 	tab_cpy(tab, sort, len);
 	quick_sort(sort, 0, len - 1);

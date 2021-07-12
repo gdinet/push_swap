@@ -6,7 +6,7 @@
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:57:03 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/08 15:30:56 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 11:15:16 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 # include "libft.h"
 # include <stdlib.h>
 
-typedef struct	s_stacks
+struct	s_stacks
 {
 	int		*a;
 	int		a_len;
 	int		*b;
 	int		b_len;
-}				t_stacks;
+};
+
+typedef struct s_stacks	t_stacks;
 
 void	swap_a(t_stacks *st, int print);
 void	swap_b(t_stacks *st, int print);

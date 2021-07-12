@@ -6,15 +6,13 @@
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 13:40:36 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/08 14:39:36 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 14:36:58 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-
-int		exec_op(t_stacks *st, char *line)
+int	exec_op(t_stacks *st, char *line)
 {
 	if (ft_strncmp(line, "sa", 3) == 0)
 		swap_a(st, 0);
@@ -43,7 +41,7 @@ int		exec_op(t_stacks *st, char *line)
 	return (0);
 }
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_stacks	st;
 	char		*line;

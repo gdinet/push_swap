@@ -6,7 +6,7 @@
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 16:07:11 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/08 12:03:54 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 12:05:37 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	swap_b(t_stacks *st, int print)
 		ft_putendl_fd("sb", 1);
 }
 
-void swap_ab(t_stacks *st, int print)
+void	swap_ab(t_stacks *st, int print)
 {
 	swap_a(st, 0);
 	swap_b(st, 0);

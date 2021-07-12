@@ -6,14 +6,14 @@
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 03:12:04 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/08 13:48:48 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 12:06:17 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-int		strisnum(char *str)
+int	strisnum(char *str)
 {
 	if (!*str)
 		return (0);
@@ -24,7 +24,7 @@ int		strisnum(char *str)
 	return (*str == '\0');
 }
 
-int		check_dupplicate(int *tab, int len, int n)
+int	check_dupplicate(int *tab, int len, int n)
 {
 	int		i;
 
@@ -38,7 +38,7 @@ int		check_dupplicate(int *tab, int len, int n)
 	return (0);
 }
 
-int		check_sorted(t_stacks *st)
+int	check_sorted(t_stacks *st)
 {
 	int		i;
 
@@ -54,13 +54,13 @@ int		check_sorted(t_stacks *st)
 	return (1);
 }
 
-int		parse(int ac, char **av, t_stacks *st)
+int	parse(int ac, char **av, t_stacks *st)
 {
 	int		i;
 	int		nb;
 
 	i = 0;
-	while (i < ac- 1)
+	while (i < ac - 1)
 	{
 		if (!strisnum(av[i + 1]))
 			return (error_exit(st));

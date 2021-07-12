@@ -6,13 +6,13 @@
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 06:21:09 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/08 16:17:58 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 12:12:01 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_stacks	st;
 
@@ -28,9 +28,10 @@ int		main(int ac, char **av)
 		return (0);
 	if (st.a_len <= 10)
 		insert_sort(&st);
-	else
+	else if (st.a_len <= 200)
 		chunk_sort(&st, 6);
-	//print_game(&st);
+	else
+		chunk_sort(&st, 12);
 	clear_stacks(&st);
 	return (0);
 }
