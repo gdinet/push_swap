@@ -60,7 +60,7 @@ if [[ "$UNAME" == "Linux" ]]
 		fi
 		CHECKER=./checker_Mac
 fi
-
+CHECKER=./checker
 ###############################################
 
 #			TEST STARTS HERE				  #

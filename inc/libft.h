@@ -6,7 +6,7 @@
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 11:34:55 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/12 11:25:37 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 15:25:09 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ typedef struct s_list	t_list;
 typedef struct s_file	t_file;
 
 int					ft_atoi(const char *str);
-int					ft_atoi_ovf(const char *str, int *res);
+int					ft_atoi_ovf(const char *str, int *nb);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
+void				ft_free_split(char **tab);
 int					get_next_line(int fd, char **line);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);

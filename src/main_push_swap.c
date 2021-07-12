@@ -6,7 +6,7 @@
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 06:21:09 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/12 12:12:01 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 15:54:17 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ int	main(int ac, char **av)
 
 	if (ac == 1)
 		return (0);
-	st.a = malloc(sizeof(int) * (ac - 1));
-	st.a_len = 0;
-	st.b = malloc(sizeof(int) * (ac - 1));
-	st.b_len = 0;
+	if (init_stack(ac, av, &st))
+		return (0);
 	if (parse(ac, av, &st))
 		return (0);
 	if (check_sorted(&st))

@@ -6,7 +6,7 @@
 /*   By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 15:57:03 by gdinet            #+#    #+#             */
-/*   Updated: 2021/07/12 11:15:16 by gdinet           ###   ########.fr       */
+/*   Updated: 2021/07/12 15:54:53 by gdinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	rev_rotate_a(t_stacks *st, int print);
 void	rev_rotate_b(t_stacks *st, int print);
 void	rev_rotate_ab(t_stacks *st, int print);
 
+int		init_stack(int ac, char **av, t_stacks *st);
 int		parse(int ac, char **av, t_stacks *st);
 int		check_sorted(t_stacks *st);
 void	clear_stacks(t_stacks *st);

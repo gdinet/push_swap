@@ -6,7 +6,7 @@
 #    By: gdinet <gdinet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 03:30:06 by gdinet            #+#    #+#              #
-#    Updated: 2021/07/12 14:19:16 by gdinet           ###   ########.fr        #
+#    Updated: 2021/07/12 15:55:59 by gdinet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ FT			= libft
 
 SRC			= src/clear.c \
 			  src/chunk_sort.c \
+			  src/init_stack.c \
 			  src/print_game.c \
 			  src/insert_sort.c \
 			  src/main_push_swap.c \
@@ -32,6 +33,7 @@ SRC			= src/clear.c \
 			  src/value_pos.c
 
 SRC2		= src/clear.c \
+			  src/init_stack.c \
 			  src/main_checker.c \
 			  src/print_game.c \
 			  src/parsing.c \
